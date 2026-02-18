@@ -46,7 +46,7 @@ const revealLR = {
 
 export default function Work() {
   return (
-    <section className="w-full bg-[#d4dce7]">
+    <section className="w-full bg-(--bg-3)">
       <div className="flex min-h-[105vh] w-full flex-col md:flex-row">
         {/* Image */}
         <motion.div
@@ -139,9 +139,9 @@ export default function Work() {
             viewport={viewportOnce}
             transition={{ delay: 0.12 }}
             href="#"
-            className="mt-auto border-t border-(--text) bg-transparent px-[3.75vw] py-7 text-center transition-colors duration-1000 hover:bg-(--text) hover:text-(--bg) focus-visible:ring-2 focus-visible:ring-(--text)/40 focus-visible:ring-offset-4 focus-visible:ring-offset-(--bg) focus-visible:outline-none"
+            className="mt-8 border-t border-(--text) bg-transparent px-[3.75vw] py-7 text-center transition-colors duration-1000 hover:bg-(--text) hover:text-(--bg) focus-visible:ring-2 focus-visible:ring-(--text)/40 focus-visible:ring-offset-4 focus-visible:ring-offset-(--bg) focus-visible:outline-none lg:mt-auto"
           >
-            <span className="inline-flex items-center justify-center gap-2 text-[15px] tracking-[0.12em] uppercase">
+            <span className="inline-flex items-center justify-center gap-2 text-[15px] font-semibold tracking-[0.12em] uppercase">
               WORK WITH ME
               <ArrowRightIcon />
             </span>

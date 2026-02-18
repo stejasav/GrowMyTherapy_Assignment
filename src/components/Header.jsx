@@ -11,7 +11,6 @@ export default function Header() {
 
   const UP_REVEAL_THRESHOLD = 160;
 
-  // Lock body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => {
@@ -19,16 +18,14 @@ export default function Header() {
     };
   }, [open]);
 
-  // Close menu if viewport becomes desktop (simple UX safety)
   useEffect(() => {
     const onResize = () => {
-      if (window.innerWidth >= 768) setOpen(false); // md breakpoint
+      if (window.innerWidth >= 768) setOpen(false);
     };
     window.addEventListener('resize', onResize, { passive: true });
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  // Close on Escape
   useEffect(() => {
     const onKeyDown = (e) => {
       if (e.key === 'Escape') setOpen(false);
@@ -37,7 +34,6 @@ export default function Header() {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, []);
 
-  // Hide on scroll down, reveal after scrolling up a bit
   useEffect(() => {
     lastScrollYRef.current = window.scrollY || 0;
     upAccumRef.current = 0;
@@ -45,7 +41,6 @@ export default function Header() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY || 0;
 
-      // Always show at very top
       if (currentScrollY <= 10) {
         if (!visible) setVisible(true);
         upAccumRef.current = 0;
@@ -57,11 +52,9 @@ export default function Header() {
       const delta = currentScrollY - lastY;
 
       if (delta > 0) {
-        // scrolling down
         upAccumRef.current = 0;
         if (currentScrollY > 50 && visible) setVisible(false);
       } else if (delta < 0) {
-        // scrolling up
         upAccumRef.current += Math.abs(delta);
         if (upAccumRef.current >= UP_REVEAL_THRESHOLD && !visible) {
           setVisible(true);

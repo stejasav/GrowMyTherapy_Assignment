@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import WomanSitting from '../../public/woman-sitting-left.png';
+import DocInOffice from '../../public/DocInOffice.png';
+import { ArrowRightIcon } from '@/Icon/ArrowRightIcon';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 70 },
@@ -37,10 +38,10 @@ export default function GetInTouch() {
           className="relative order-1 min-h-80 w-full md:order-2 md:h-full md:w-[45%]"
         >
           <Image
-            src={WomanSitting}
-            alt="Woman sitting in a calm space"
+            src={DocInOffice}
+            alt="Doc sitting at her desk in the office"
             fill
-            className="object-cover"
+            className="object-cover object-right"
             sizes="(max-width: 768px) 100vw, 45vw"
             placeholder="blur"
           />
@@ -87,8 +88,9 @@ export default function GetInTouch() {
             href="#contact"
             className="mt-auto border-t border-(--text) bg-transparent px-[3.75vw] py-7 text-center transition-colors duration-1000 hover:bg-(--text) hover:text-(--bg) focus-visible:ring-2 focus-visible:ring-(--text)/40 focus-visible:ring-offset-4 focus-visible:ring-offset-(--bg) focus-visible:outline-none"
           >
-            <span className="inline-block text-[13.696px] font-semibold tracking-[0.12em] uppercase">
+            <span className="inline-flex items-center justify-center gap-2 text-[13.696px] font-semibold tracking-[0.12em] uppercase">
               Get in touch
+              <ArrowRightIcon />
             </span>
           </motion.a>
         </div>

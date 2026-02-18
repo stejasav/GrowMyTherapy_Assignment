@@ -31,7 +31,7 @@ export default function Footer() {
               viewport={viewportOnce}
               className="mb-6 text-[32px] leading-[1.13] font-medium text-(--text) sm:text-[34px] md:mb-8 md:text-[37.402px] md:leading-[42.1895px]"
             >
-              Dr. Maya Reynolds, PsyD
+              Dr. Maya Reynolds
             </motion.h3>
 
             <motion.div

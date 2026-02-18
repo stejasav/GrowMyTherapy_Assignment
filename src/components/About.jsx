@@ -29,10 +29,10 @@ const fadeUpText = {
 
 export default function About() {
   return (
-    <section id="about" className="w-full bg-(--bg-2) py-25">
+    <section id="about" className="w-full bg-(--bg) py-25">
       <div className="mx-auto flex w-full max-w-300 flex-col-reverse gap-1 px-6 md:flex-row md:items-center">
         {/* Text */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 mt-(--margin-2xl) md:mt-0">
           <motion.h2
             variants={fadeUpText}
             initial="hidden"
