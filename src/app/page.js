@@ -1,17 +1,20 @@
+import dynamic from 'next/dynamic';
+
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import GetInTouch from '@/components/GetInTouch';
-import Specialities from '@/components/Specialties';
-import Work from '@/components/Work';
-import About from '@/components/About';
-import FAQ from '@/components/FAQ';
-import Background from '@/components/Background';
-import GetStarted from '@/components/GetStarted';
-import Footer from '@/components/Footer';
+
+const GetInTouch = dynamic(() => import('@/components/GetInTouch'));
+const Specialities = dynamic(() => import('@/components/Specialties'));
+const Work = dynamic(() => import('@/components/Work'));
+const About = dynamic(() => import('@/components/About'));
+const FAQ = dynamic(() => import('@/components/FAQ'));
+const Background = dynamic(() => import('@/components/Background'));
+const GetStarted = dynamic(() => import('@/components/GetStarted'));
+const Footer = dynamic(() => import('@/components/Footer'));
 
 export default function Home() {
   return (
-    <main className="h-screen">
+    <main className='h-screen'>
       <Header />
       <Hero />
       <GetInTouch />

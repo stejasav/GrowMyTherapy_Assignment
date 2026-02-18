@@ -1,14 +1,19 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --bg: #FBF6F1;
-  --text: #213614;
+  --bg: #f4f7f8;
+  --bg-2: #e9eef0;
+  --text: #224147;
+  --margin-sm: 1rem;
+  --margin-md: 1.5rem;
+  --margin-lg: 2rem;
+  --margin-xl: 3rem;
+  --margin-2xl: 4.5rem;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", Roboto,
-    Arial, "Noto Sans";
-    overflow-x: hidden;
+  overflow-x: hidden;
+  font-family: var(--font-montserrat);
 }

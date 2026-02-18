@@ -2,25 +2,25 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import specialty1 from '../../public/specialty-1.jpg';
-import specialty2 from '../../public/specialty-2.jpg';
-import specialty3 from '../../public/specialty-3.png';
+import Anxiety from '../../public/anxiety.png';
+import Trauma from '../../public/trauma.png';
+import Burnout from '../../public/burnout.png';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 10 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 2, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] },
   },
 };
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 60 },
+  hidden: { opacity: 0, y: 28 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 2, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] },
   },
 };
 
@@ -29,53 +29,56 @@ const viewportOnce = { once: true, amount: 0.35 };
 export default function Specialties() {
   const specialties = [
     {
-      title: 'Self-Esteem',
+      title: 'Anxiety & Panic',
       description:
-        "Building a strong sense of self-worth is key to living a fulfilled life. Let's work together to bolster your self-esteem.",
-      image: specialty1,
-      alt: 'Person in contemplative moment',
+        'Support for chronic worry, overthinking, tension, and sleep disruption especially when you appear functional but feel overwhelmed.',
+      image: Anxiety,
+      alt: 'Person with Anxiety sitting on a couch',
+      objectClass: 'object-center',
     },
     {
-      title: 'Relationships',
+      title: 'Trauma Therapy',
       description:
-        "Navigating relationships can be complex. I'm here to guide you through these complexities to help you form healthier connections.",
-      image: specialty2,
-      alt: 'Person sitting outdoors',
+        'Carefully paced trauma work focused on safety, stabilization, and helping you feel more regulated in daily life.',
+      image: Trauma,
+      alt: 'Girl holding her head in a moment of overwhelm',
+      objectClass: 'object-center',
     },
     {
-      title: 'Burnout',
+      title: 'Burnout & Perfectionism',
       description:
-        "Feeling overwhelmed by your career is more common than you think. Together, we'll identify strategies to manage and prevent burnout.",
-      image: specialty3,
-      alt: 'Person reading by bookshelf',
+        'For high performing professionals navigating pressure, exhaustion, and unsustainable standards.',
+      image: Burnout,
+      alt: 'Woman sitting at a desk with her head in her hands, overwhelmed',
+      objectClass: 'object-center',
     },
   ];
 
+
   return (
-    <section className="py-[clamp(3rem,7vw,6rem)]">
+    <section id="specialties" className="py-[clamp(3rem,7vw,6rem)]">
       <motion.h2
         variants={fadeIn}
         initial="hidden"
         whileInView="show"
         viewport={viewportOnce}
-        className="text-center text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.1] font-medium"
+        className="text-center text-[clamp(2rem,5vw,4.5rem)] leading-[1.1] font-medium"
       >
-        My Specialties
+        Areas I Support
       </motion.h2>
 
-      <div className="mx-auto mt-12 px-[3.75vw] md:mt-16 lg:mt-20">
+      <div className="mx-auto mt-(--margin-lg) px-[3.75vw] md:mt-(--margin-xl) lg:mt-(--margin-2xl)">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8 lg:gap-10">
-          {specialties.map((specialty, index) => (
-            <div key={index} className="flex flex-col border border-[#223614] bg-[#E5E0DA] p-5">
+          {specialties.map((s, index) => (
+            <div key={index} className="flex flex-col bg-(--bg-2) p-5">
               <motion.h3
                 variants={fadeIn}
                 initial="hidden"
                 whileInView="show"
                 viewport={viewportOnce}
-                transition={{ delay: 0.3 }}
-                className="text-[20px] font-medium"
+                className="text-center text-[20px] font-medium"
               >
-                {specialty.title}
+                {s.title}
               </motion.h3>
 
               <motion.p
@@ -83,25 +86,26 @@ export default function Specialties() {
                 initial="hidden"
                 whileInView="show"
                 viewport={viewportOnce}
-                transition={{ delay: 0.5 }}
-                className="mt-6 text-[15px] leading-[22.9696px]"
+                className="mt-(--margin-sm) md:mt-(--margin-md) text-[15px] leading-[1.6] text-(--text)"
               >
-                {specialty.description}
+                {s.description}
               </motion.p>
 
-              <div className="mt-auto flex justify-center pt-8">
+              <div className="mt-auto flex justify-center pt-(--margin-sm) md:pt-(--margin-md)">
                 <motion.div
                   variants={fadeUp}
                   initial="hidden"
                   whileInView="show"
                   viewport={viewportOnce}
-                  className="relative aspect-square w-75 overflow-hidden rounded-full"
+                  className="relative aspect-square w-72 overflow-hidden rounded-full"
                 >
                   <Image
-                    src={specialty.image}
-                    alt={specialty.alt}
+                    src={s.image}
+                    alt={s.alt}
                     fill
-                    className={`object-cover ${index === 0 ? 'object-left' : 'object-bottom'}`}
+                    className={`object-cover ${s.objectClass}`}
+                    sizes="(max-width: 768px) 288px, 260px"
+                    placeholder="blur"
                   />
                 </motion.div>
               </div>

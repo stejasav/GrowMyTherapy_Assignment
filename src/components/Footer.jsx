@@ -22,7 +22,6 @@ export default function Footer() {
     <footer className="w-full">
       <div className="mx-auto min-h-96 w-full max-w-400 px-6 py-9 md:px-12 lg:px-18">
         <div className="flex flex-col justify-between gap-12 md:flex-row md:gap-8">
-          {/* Lilac */}
           <div className="text-center md:text-left">
             <motion.h3
               custom={0}
@@ -30,9 +29,9 @@ export default function Footer() {
               initial="hidden"
               whileInView="show"
               viewport={viewportOnce}
-              className="mb-6 text-[32px] leading-[1.13] font-medium sm:text-[34px] md:mb-8 md:text-[37.402px] md:leading-[42.1895px]"
+              className="mb-6 text-[32px] leading-[1.13] font-medium text-(--text) sm:text-[34px] md:mb-8 md:text-[37.402px] md:leading-[42.1895px]"
             >
-              Lilac Template
+              Dr. Maya Reynolds, PsyD
             </motion.h3>
 
             <motion.div
@@ -41,10 +40,10 @@ export default function Footer() {
               initial="hidden"
               whileInView="show"
               viewport={viewportOnce}
-              className="text-[16px] leading-[1.6] sm:text-[17px] md:text-[19.456px] md:leading-[31.1296px]"
+              className="text-[16px] leading-[1.6] text-(--text)/82 sm:text-[17px] md:text-[19.456px] md:leading-[31.1296px]"
             >
-              <p>123 Example Road</p>
-              <p>Minneapolis, MN</p>
+              <p>123th Street 45 W</p>
+              <p>Santa Monica, CA 90401</p>
             </motion.div>
 
             <motion.div
@@ -55,17 +54,19 @@ export default function Footer() {
               viewport={viewportOnce}
               className="mt-6 flex flex-col text-[16px] leading-[1.6] sm:text-[17px] md:mt-8 md:text-[19.456px] md:leading-[31.1296px]"
             >
-              <a href="mailto:email@example.com" className="underline underline-offset-4">
-                email@example.com
+              <a
+                href="mailto:hello@drmayareynolds.com"
+                className="text-(--text) underline underline-offset-4"
+              >
+                hello@drmayareynolds.com
               </a>
-              <a href="tel:+15555555555" className="underline underline-offset-4">
-                (555) 555-5555
+              <a href="tel:+13105551234" className="text-(--text) underline underline-offset-4">
+                (310) 555-1234
               </a>
             </motion.div>
           </div>
 
           <div className="flex flex-col justify-start gap-10 text-center md:flex-row md:gap-16 md:text-left lg:gap-20">
-            {/* Hours */}
             <div>
               <motion.h4
                 custom={0}
@@ -73,9 +74,9 @@ export default function Footer() {
                 initial="hidden"
                 whileInView="show"
                 viewport={viewportOnce}
-                className="mb-6 text-[26px] leading-[1.15] font-medium sm:text-[28px] md:mb-8 md:text-[30.268px] md:leading-[34.8687px]"
+                className="mb-6 text-[26px] leading-[1.15] font-medium text-(--text) sm:text-[28px] md:mb-8 md:text-[30.268px] md:leading-[34.8687px]"
               >
-                Hours
+                Session Options
               </motion.h4>
 
               <motion.div
@@ -84,14 +85,13 @@ export default function Footer() {
                 initial="hidden"
                 whileInView="show"
                 viewport={viewportOnce}
-                className="text-[16px] leading-[1.6] font-normal sm:text-[17px] md:text-[19.456px] md:leading-[31.1296px]"
+                className="text-[16px] leading-[1.6] font-normal text-(--text)/82 sm:text-[17px] md:text-[19.456px] md:leading-[31.1296px]"
               >
-                <p>Monday – Friday</p>
-                <p>10am – 6pm</p>
+                <p>In-person (Santa Monica)</p>
+                <p>Secure telehealth (California)</p>
               </motion.div>
             </div>
 
-            {/* Find */}
             <nav aria-label="Footer navigation">
               <motion.h4
                 custom={0}
@@ -99,7 +99,7 @@ export default function Footer() {
                 initial="hidden"
                 whileInView="show"
                 viewport={viewportOnce}
-                className="mb-6 text-center text-[26px] leading-[1.15] font-medium sm:text-[28px] md:mb-8 md:text-right md:text-[30.268px] md:leading-[34.8687px]"
+                className="mb-6 text-center text-[26px] leading-[1.15] font-medium text-(--text) sm:text-[28px] md:mb-8 md:text-right md:text-[30.268px] md:leading-[34.8687px]"
               >
                 Find
               </motion.h4>
@@ -110,16 +110,16 @@ export default function Footer() {
                 initial="hidden"
                 whileInView="show"
                 viewport={viewportOnce}
-                className="flex flex-col text-center text-[16px] leading-[1.6] sm:text-[17px] md:text-right md:text-[19.456px] md:leading-[31.1296px]"
+                className="flex flex-col text-center text-[16px] leading-[1.6] text-(--text)/82 sm:text-[17px] md:text-right md:text-[19.456px] md:leading-[31.1296px]"
               >
-                <a href="#" className="underline underline-offset-4">
-                  Home
+                <a href="#specialties" className="underline underline-offset-4">
+                  Specialties
                 </a>
-                <a href="#" className="underline underline-offset-4">
+                <a href="#about" className="underline underline-offset-4">
+                  About
+                </a>
+                <a href="#contact" className="underline underline-offset-4">
                   Contact
-                </a>
-                <a href="#" className="underline underline-offset-4">
-                  Blog
                 </a>
               </motion.div>
             </nav>
@@ -127,7 +127,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="w-full bg-[#E5E0DA]">
+      <div className="w-full bg-(--bg-2)">
         <div className="mx-auto flex min-h-54.25 w-full max-w-400 flex-col justify-between px-6 py-1.5 md:px-0 md:py-4.5">
           <div>
             <motion.nav
@@ -139,20 +139,15 @@ export default function Footer() {
               aria-label="Legal"
               className="text-center sm:pt-5 md:pt-7.5"
             >
-              <ul className="mx-auto mb-4 flex max-w-275 flex-wrap justify-center gap-x-6 md:gap-y-3 text-center text-[16px] leading-[25.6px] font-normal">
+              <ul className="mx-auto mb-4 flex max-w-275 flex-wrap justify-center gap-x-6 text-center text-[16px] leading-[25.6px] font-normal text-(--text)/82 md:gap-y-3">
                 <li>
                   <a href="#" className="underline underline-offset-4">
-                    Privacy & Cookies Policy
+                    Privacy Policy
                   </a>
                 </li>
                 <li>
                   <a href="#" className="underline underline-offset-4">
-                    Good Faith Estimate
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="underline underline-offset-4">
-                    Website Terms & Conditions
+                    Website Terms
                   </a>
                 </li>
                 <li>
@@ -169,12 +164,9 @@ export default function Footer() {
               initial="hidden"
               whileInView="show"
               viewport={viewportOnce}
-              className="text-center text-[16px] leading-[25.6px] font-normal"
+              className="text-center text-[16px] leading-[25.6px] font-normal text-(--text)/82"
             >
-              Website Template Credits:{' '}
-              <a href="#" className="whitespace-nowrap underline underline-offset-4">
-                Go Bloom Creative
-              </a>
+              In-person therapy in Santa Monica, CA • Telehealth available across California.
             </motion.p>
           </div>
 
@@ -184,9 +176,9 @@ export default function Footer() {
             initial="hidden"
             whileInView="show"
             viewport={viewportOnce}
-            className="mt-6 text-center text-[16px] leading-[25.6px] font-normal"
+            className="mt-6 text-center text-[16px] leading-[25.6px] font-normal text-(--text)/82"
           >
-            All Rights Reserved © 2024 Your Business Name Here, LLC.
+            © {new Date().getFullYear()} Dr. Maya Reynolds, PsyD. All rights reserved.
           </motion.p>
         </div>
       </div>

@@ -1,23 +1,22 @@
-import { Outfit } from 'next/font/google';
 import './globals.css';
+import { Montserrat } from 'next/font/google';
 
-const outfit = Outfit({
+const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-outfit',
+  variable: '--font-montserrat',
   display: 'swap',
 });
 
 export const metadata = {
-  title: 'Lilac Template',
+  title: 'Dr. Maya Reynolds Therapy',
   description:
-    'Professional therapy services in Minneapolis, MN. Specializing in self-esteem, relationships, and burnout. Book your first session today.',
+    'Dr. Maya Reynolds, PsyD is a licensed clinical psychologist in Santa Monica, CA, providing therapy for adults navigating anxiety, panic, trauma, perfectionism, and professional burnout. In-person sessions in Santa Monica and secure telehealth across California.',
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={outfit.variable}>
-      <body className="font-outfit antialiased">{children}</body>
+    <html lang="en" className={montserrat.variable}>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
